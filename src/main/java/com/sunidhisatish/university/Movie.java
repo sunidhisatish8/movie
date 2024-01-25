@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 @Document(collection = "university")
 @AllArgsConstructor
 @NoArgsConstructor
-public class University {
+public class Movie {
 	@Id
 	private ObjectId id;
 	@DocumentReference

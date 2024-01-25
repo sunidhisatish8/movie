@@ -13,16 +13,16 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/movies")
-public class UniversityController {
+public class MovieController {
     @Autowired
-    private UniversityService universityService;
+    private MovieService movieService;
     @GetMapping
-    public ResponseEntity<List<University>> allMovies() {
-        return new ResponseEntity<List<University>>(universityService.response(), HttpStatus.OK);
+    public ResponseEntity<List<Movie>> allMovies() {
+        return new ResponseEntity<List<Movie>>(movieService.response(), HttpStatus.OK);
     }
 
     @GetMapping("/{imdbId}")
-    public ResponseEntity<Optional<University>> oneMovie(@PathVariable String imdbId) {
-        return new ResponseEntity<Optional<University>>(universityService.findResponseItemByImdbId(imdbId), HttpStatus.OK);
+    public ResponseEntity<Optional<Movie>> oneMovie(@PathVariable String imdbId) {
+        return new ResponseEntity<Optional<Movie>>(movieService.findResponseItemByImdbId(imdbId), HttpStatus.OK);
     }
 }
